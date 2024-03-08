@@ -12,7 +12,7 @@ from langchain_community.llms import HuggingFaceHub
 import pandas as pd
 import streamlit as st
 
-os.environ["HUGGINGFACEHUB_API_TOKEN"] = "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"
+os.environ["HUGGINGFACEHUB_API_TOKEN"] = st.secrets["HUGGINGFACEHUB_API_TOKEN"]
 
 llm = HuggingFaceHub(
     repo_id="mistralai/Mistral-7B-Instruct-v0.2", model_kwargs={"temperature": 0.5, "max_new_tokens": 30000}
